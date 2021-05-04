@@ -1,0 +1,83 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+body{
+    background-color: rgb(255, 255, 255);
+}
+
+#menu-vertical{
+    font-size: 2rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-top: 0.8rem;
+    background-color: rgb(19, 18, 18);
+    height: 3.1rem;
+}
+
+#menu-vertical li{
+    display: inline;
+    height: 3rem;
+}
+
+#menu-vertical li a{
+    margin-left: 1rem;
+    padding: 0.8rem 2.2rem; 
+    background: rgb(19, 18, 18);
+    text-decoration: none;
+    color: rgb(255, 196, 0);
+}
+
+#menu-vertical li a:hover {
+    background: rgb(255, 196, 0);
+    color: #000; 
+}
+
+#myMain{
+    display: flex;
+}
+
+#myText{
+    text-align: justify;
+    padding: 1rem;
+    text-indent: 0.7rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.3rem;
+    
+}
+
+#paragraph{
+    height: 29rem;
+    overflow: auto;
+    padding: 1rem 1rem;
+}
+p{
+    padding: 1rem 0;
+}
+
+
+#myImage{
+    position: relative;
+    bottom: 4rem;
+}
+img{
+    width: 44rem;
+    height: 35rem;
+    border: 0.5rem solid rgb(0, 0, 0);
+    position: relative;
+    top: 0.3rem;
+}
+
+button{
+    width: 40%;
+    height: 5rem;
+    background-color: rgb(70, 73, 68);
+    box-shadow: 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.698);
+    font-weight: bold;
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.431);
+}
