@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #FABC3C;
+}
+
+#divsInicio{
+    display: flex;
+    justify-content: center;
+}
+
+#divsInicio div{
+    border: 0.2rem solid rgb(153, 100, 15);
+    width: 15rem;
+    height: 15rem;
+    margin: 1rem 1rem;
+    font-size: 14rem;
+    text-align: center;
+    background-color: #FFB238;
+    box-shadow: 0.2rem 0.2rem 0.5rem rgb(153, 100, 15);
+}
+
+#myButtons{
+    display: flex;
+    flex-direction: column;
+    width: 16rem;
+    margin-left: 6rem;
+    
+}
+
+button{
+    height: 4rem;
+    margin: 2rem;
+    background-color: #F55536;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#buttonsForm{
+    display: flex;
+}
+
+
+form{
+    background-color: #FF773D;
+    width: 42rem;
+    height: 20rem;
+    box-shadow: 0.2rem 0.2rem 0.6rem #8f4222;
+    position: relative;
+    top: 2rem;
+    left: 2rem;
+    box-sizing: border-box;
+    padding: 1rem 11.5rem;
+    font-weight: bold;
+    
+}
+
+input, select{
+    width: 20rem;
+    margin: 0.2rem;
+}
+
+select{
+    width: 20.21rem;
+    margin: 0.8rem 0.2rem;
+}
+
+#dataSubmit{
+    width: 12rem;
+    height: 18rem;
+    position: relative;
+    top: 2rem;
+    left: 3.6rem;
+    background-color: #FF773D;
+    box-shadow: 0.2rem 0.2rem 0.6rem #8f4222;
+    padding: 1rem;
+    font-size: 2rem;
+}
