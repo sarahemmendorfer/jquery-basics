@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <!-- FLAVICON -->
+    <link rel="shortcut icon" href="img/favicon_io (1)/favicon.ico" />
+    <!-- LINK CSS -->
+    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="stylesheet" href="css/index.css">
+    <!-- JQUERY -->
+    <link rel="stylesheet" href="js/jquery-ui-1.12.1.custom/jquery-ui.css">
+    <script src="js/jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+    <script src="js/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+    <!-- FONTE -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body onload="atualizarDataHora()">
+    <header>
+        <nav>
+            <div class="dropMenu" id="menuAncora">
+                <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="quemsomos.html">Sobre Nós</a></li>
+                    <li><a href="cadastro.html">Cadastro Vacinação</a></li>
+                    <li><a href="fases.html">Fases de risco e Atividades econômicas</a></li>
+                </ul>
+            </div>
+
+            <div class="imgZoom">
+                <img src="img/sinal-mais.png" alt="Sinal de soma" class="btnZoom" onclick="darZoom()">
+            </div>
+
+            <div class="imgLogo">
+                <img src="img/Health Tech logotipo.png" alt="Logotipo">
+            </div>
+        </nav>
+
+    </header>
+
+    <main>
+        <section class="imgCovid">
+            <img src="img/vacina-covid-azul.jpg" alt="vacina covid" id="covidVac">
+        </section>
+
+        <section id="sec_cadastro">
+            <h2>Cadastre-se conosco!</h2>
+            <p id="pFrase">Faça o cadastro e veja se a vacina já está disponível para sua faixa etária!</p>
+        </section>
+
+        <div id="content">
+
+            <div class="campos">
+                <label for="name">Nome</label>
+                <input type="text" id="nome" onblur="verificaInputs(this)">
+            </div>
+
+            <!-- input dia com validação de números negativos -->
+            <div class="campos">
+                <label for="dia">Dia</label>
+                <input type="number" id="dia" min="1" max="31" maxlength="2"
+                    onblur="validaDia(this), verificaInputs(this)" onkeypress="return event.charCode >= 48" min="1">
+                <!-- onkeypress="return event.charCode > 48" BLOQUEIA A ENTRADA DE NÚMEROS MENORES QUE 0 (48=0)-->
+
+
+                <!-- input mês -->
+                <label for="mes">Mês</label>
+                <select name="mes" id="mes" oninput="verificaInputs(this)">
+                    <option value="0"></option>
+                    <option value="1">Janeiro</option>
+                    <option value="2">Fevereiro</option>
+                    <option value="3">Março</option>
+                    <option value="4">Abril</option>
+                    <option value="5">Maio</option>
+                    <option value="6">Junho</option>
+                    <option value="7">Julho</option>
+                    <option value="8">Agosto</option>
+                    <option value="9">Setembro</option>
+                    <option value="10">Outubro</option>
+                    <option value="11">Novembro</option>
+                    <option value="12">Dezembro</option>
+                </select>
+
+                <!-- input ano com validação de números negativos -->
+                <label for="ano">Ano</label>
+                <input type="number" id="ano" min="1890" max="2021" maxlength="2"
+                    onblur="validaAno(this),validaIdade(), verificaInputs(this)"
+                    onkeypress="return event.charCode >= 48" min="1">
+
+
+                <label for="inputEtnia">Etnia</label> 
+                <select name="etnia" id="etnia" class="resposta" oninput="verificaInputs(this)">
+                    <option value="vazio">-</option>
+                    <option value="01">Branca</option>
+                    <option value="02">Preta</option>
+                    <option value="03">Parda</option>
+                    <option value="04">Amarela</option>
+                    <option value="05">Indígena</option>
+                    <option value="06">Não informado</option>
+                </select>
+            </div>
+
+            
+            <!-- input CPF com validação de números negativos-->
+            <div class="campoCPF">
+                <label for="inputCpf">CPF:</label>
+                <input maxlength="11" onblur="VerificaCPF(), verificaInputs(this)" type="text" id="cpf"
+                    onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="xxx.xxx.xxx-xx"
+                    class="resposta">
+            </div>
+
+
+            <!-- select sexo -->
+            <div id="sec_sexo">
+                <label for="inputSexo">Sexo:</label>
+                <select oninput="verificaInputs(this), VerificaSexo()" oninput="VerificaSexo()" name="sexo" id="sexo"
+                    class="resposta">
+                    <option value="vazio">-</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="naoInformado">Não informado</option>
+                </select>
+            </div>
+
+            <!-- Gestantes -->
+            <div id="sec_gestante">
+                <label for="inputGestante">Gestante</label>
+                <select name="gestante" id="gestante" class="resposta">
+                    <option value="Não">Não</option>
+                    <option value="Sim">Sim</option>
+                </select>
+            </div>
+
+            <!-- Profissões -->
+            <div class="campoProfissao">
+                <label for="inputProfissoes">Profissão: </label>
+                <select name="prof" id="profissoes" oninput="verificaInputs(this)">
+                    <option value="vazio"></option>
+                    <option value="analista de Sist">Analista de Sistemas</option>
+                    <option value="asst social">Assistente Social</option>
+                    <option value="cuidador">Cuidador (a)</option>
+                    <option value="Data Scientist">Data Scientist</option>
+                    <option value="desenvolvedor">Desenvolvedor</option>
+                    <option value="enfermeiro">Enfermeiro (a)</option>
+                    <option value="eng de sftware">Engenheiro de Software</option>
+                    <option value="fisioterapeuta">Fisioterapeuta</option>
+                    <option value="medico">Médico</option>
+                    <option value="outros">Outros</option>
+                </select>
+
+                <label for="inputSus">Carteira do SUS</label>
+                <input onclick="tirarVermelho(this)" onblur="verificaInputs(this)" type="text" name="sus" id="sus"
+                    class="resposta" placeholder="XXXXXXXXXXXXXXX" maxlength="15"
+                    onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            </div>
+
+            <div class="campoVacinas">
+                <fieldset>
+                    <legend>Vacinas anteriores: </legend>
+
+                    <input type="checkbox" name="checkbox-1" id="checkbox-1">
+                    <label for="checkbox-1">Febre Amarela</label>
+
+                    <input type="checkbox" name="checkbox-2" id="checkbox-2">
+                    <label for="checkbox-2">Hepatite A</label>
+
+                    <input type="checkbox" name="checkbox-3" id="checkbox-3">
+                    <label for="checkbox-3">Hepatite B</label>
+
+                    <input type="checkbox" name="checkbox-4" id="checkbox-4">
+                    <label for="checkbox-4">HPV</label>
+
+                    <input type="checkbox" name="checkbox-5" id="checkbox-5">
+                    <label for="checkbox-5">Influenza</label>
+
+                    <input type="checkbox" name="checkbox-6" id="checkbox-6">
+                    <label for="checkbox-6">Poliomelite Inativada</label>
+
+                    <input type="checkbox" name="checkbox-7" id="checkbox-7">
+                    <label for="checkbox-7">Pneumo 23</label>
+
+                    <input type="checkbox" name="checkbox-8" id="checkbox-8">
+                    <label for="checkbox-8">Tetano</label>
+
+                    <input type="checkbox" name="checkbox-9" id="checkbox-9">
+                    <label for="checkbox-9">Tetraviral (SCRV)</label>
+
+                    <input type="checkbox" name="checkbox-10" id="checkbox-10">
+                    <label for="checkbox-10">Tríplice-viral</label>
+
+                    <input type="checkbox" name="checkbox-11" id="checkbox-11">
+                    <label for="checkbox-11">Tríplice Bacteriano (DTP)</label>
+
+                    <input type="checkbox" name="checkbox-12" id="checkbox-12">
+                    <label for="checkbox-12">Varicela</label>
+
+                </fieldset>
+            </div>
+
+            <div class="campoIMC">
+                <!--SESSÃO DO PESO-->
+                <div id="sec_peso">
+                    <label for="inputPeso">Peso (kg):</label>
+                    <input onclick="tirarVermelho(this)" onblur="verificaInputs(this), calculoImc()" type="number"
+                        name="peso" id="peso" class="resposta" placeholder="Peso"
+                        onkeypress="return event.charCode >= 48 && event.charCode <= 57" min="0" max="500">
+                </div>
+
+                <!--SESSÃO DA ALTURA-->
+                <div id="sec_altura">
+                    <label for="inputAltura">Altura (cm):</label>
+                    <input onclick="tirarVermelho(this)" onblur="verificaInputs(this), calculoImc()" type="number"
+                        name="altura" id="altura" class="resposta" placeholder="Altura"
+                        onkeypress="return event.charCode >= 48 && event.charCode <= 57" min="0" max="300">
+                </div>
+
+                <!--SESSÃO DA COMORBIDADE-->
+                <div id="sec_comorbidade">
+                    <label for="inputComorbidade">Obesidade</label>
+                    <input readonly type="text" name="Comorbidade" id="obesidade" class="resposta">
+                </div>
+
+
+            </div>
+
+            <div class="campoComorbidade">
+                <fieldset>
+                    <legend>Comorbidades: </legend>
+
+                    <input type="checkbox" name="checkbox-14" id="checkbox-14">
+                    <label for="checkbox-14" class="comorbidades">Diabetes</label>
+
+                    <input type="checkbox" name="checkbox-15" id="checkbox-15">
+                    <label for="checkbox-15" class="comorbidades">Insuficiência Cardíaca</label>
+
+                    <input type="checkbox" name="checkbox-16" id="checkbox-16">
+                    <label for="checkbox-16" class="comorbidades">Síndrome de Down</label>
+
+                    <input type="checkbox" name="checkbox-17" id="checkbox-17">
+                    <label for="checkbox-17" class="comorbidades"> Doenças Cardiovasculares</label>
+
+                    <input type="checkbox" name="checkbox-18" id="checkbox-18">
+                    <label for="checkbox-18" class="comorbidades">Doenças Renais Crônicas</label>
+
+                </fieldset>
+            </div>
+
+            <div>
+                <div id="divBotao">
+                    <button onclick="blocoExibicao()" id="button" type="submit">Enviar</button>
+                </div>
+                
+
+                <!-- barra de progresso -->
+                <!-- <small>Progresso <strong id="completo"></strong></small> -->
+                <div id="progressbar"></div>
+
+                <div id="bloco_confirmacao">
+                    <article id="article">
+                        <p id="confirmacaoDados"></p>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Mensagem de aprovaçao ou nao da vacina -->
+            <div id="resultado-cadastro">
+                <p></p>
+            </div>
+        </div>
+
+        <div class="btnAncora">
+            <a href="#menuAncora"><img src="img/up-arrow.png" alt="Imagem seta para cima"></a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="divImgRelogio">
+            <img src="img/clock.png" alt="Icone relógio">
+            <p id="datahora"></p>
+        </div>
+
+        <div class="imgRedes">
+            <a href="https://api.whatsapp.com/send/?phone=5511952202923&text&app_absent=0" target="_blank"><img
+                    src="img/whatsapp.png" alt="Icone Whatsapp"></a>
+
+            <a href="https://twitter.com/governosp/" target="_blank"><img src="img/twitter.png" alt="Icone Twitter"></a>
+
+            <a href="https://www.facebook.com/governosp/" target="_blank"><img src="img/facebook.png"
+                    alt="Icone Facebook"></a>
+
+            <a href="https://www.instagram.com/governosp/" target="_blank"><img src="img/instagram.png"
+                    alt="Icone Instagram"></a>
+
+            <a href="https://www.youtube.com/user/governosp" target="_blank"><img src="img/youtube.png"
+                    alt="Icone Youtube"></a>
+        </div>
+    </footer>
+
+
+    <script src="js/cadastro.js"></script>
+    <!-- <script src="js/index.js"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,226 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+h2{
+    display: inline-block;
+    padding-top: 5%;
+    font-size: 2em;
+}
+h3{
+    font-size: 1.4em;
+    margin-bottom: 3%;
+    text-align: center;
+}
+h5{
+    color: white;
+    line-height: 150px;
+    text-align: center;
+}
+
+/* MAIN FASES DE RISCO DE CONTAMINAÇÃO */
+main{
+    margin: 5% auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    column-gap: 5%;
+    width: 80%;
+}
+.fases{
+    background-color: rgba(144, 224, 239, 0.3);
+}
+.fase1{
+    border: 2px solid red;
+    border-radius: 10px;
+    font-size: 1.2em;
+    margin: 3%;
+    padding: 2%;
+}
+.fase1 h4{
+    color: red;
+}
+.fase2{
+    border: 2px solid #eb5e28;
+    border-radius: 10px;
+    font-size: 1.2em;
+    margin: 3%;
+    padding: 2%;
+}
+.fase2 h4{
+    color: #eb5e28;
+}
+.fase3{
+    border: 2px solid #ffff3f;
+    border-radius: 10px;
+    font-size: 1.2em;
+    margin: 3%;
+    padding: 2%;
+}
+.fase3 h4{
+    color: #ffff3f;
+}
+.fase4{
+    border: 2px solid green;
+    border-radius:10px;
+    font-size: 1.2em;
+    margin: 3%;
+    padding: 2%;
+}
+.fase4 h4{
+    color: green;
+}
+.item{
+    font-size: 1.2em;
+    margin: 1%;
+}
+.ocupacao{
+    display: flex;
+    flex-direction: column;
+}
+
+/* FASE ATUAL */
+#atual{
+    border: 3px solid red;
+    border-radius: 10px;
+    color: red;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 5% 15%;
+    padding: 2%;
+    text-align: justify;
+}
+
+/*ACCORDION ATIVIDADES PERMITIDAS EM CADA FASE */
+#accordion{
+    margin: 5% auto;
+    width: 100%;
+}
+#accordion h3{
+    background-color: rgba(144, 224, 239, 0.3);
+    color: black;
+    text-transform: uppercase;
+}
+#atividades{
+    display: flex;
+    margin-left: 5%;
+    margin-top: 3%;
+    text-align: center;
+    width: 60%;
+}
+
+#caixa img {
+    margin-top: 5%;
+    position: absolute;
+    left: 67%;
+}
+
+#tituloFases {
+    text-align: center;
+    padding-top: 3%;
+}
+
+#faseEnfermaria{
+    align-self: center;
+    background-color: #00b4D8;
+    border-radius: 10px;
+    font-size: 40px;
+    height: 5em;
+    margin: 5%;
+    text-align: center;
+    width: 6em;
+}
+#faseUti{
+    align-self: center;
+    background-color:#00b4D8;
+    border-radius: 10px;
+    font-size: 40px;
+    height: 5em;    
+    margin: 5%;
+    text-align: center;
+    width: 6em;
+}
+#enfermaria{
+    align-items: center;
+    background-color: #CAF0F8;
+    border-radius: 10px;
+    grid-column: 4, 5;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#text{
+    border-radius: 10px;
+    background-color:#CAF0F8;
+    grid-column: 1, 3;
+    font-size: 1.3em;
+    line-height: 1.5em;
+    padding: 5%;
+    text-align: justify;
+}
+#text ul{
+    width: 70%;
+    margin: 5% 5% 5% 20%;
+}
+#titulo{
+    margin-left: 38%;
+    margin-top: 5%;
+}
+#uti{
+    align-items: center;
+    background-color:#CAF0F8;
+    border-radius: 10px;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    grid-column: 3, 4;
+    justify-content: space-around;
+}
+
+.fases{
+    background-color: rgba(144, 224, 239, 0.3);
+}
+.fase1{
+    border: 2px solid red;
+    border-radius: 10px;
+    font-size: 1.2em;
+    margin: 3%;
+    padding: 2%;
+}
+.fase1 h4{
+    color: red;
+}
+.fase2{
+    border: 2px solid #eb5e28;
+    border-radius: 10px;
+    font-size: 1.2em;
+    margin: 3%;
+    padding: 2%;
+}
+.fase2 h4{
+    color: #eb5e28;
+}
+.fase3{
+    border: 2px solid #ffc107;
+    border-radius: 10px;
+    font-size: 1.2em;
+    margin: 3%;
+    padding: 2%;
+}
+.fase3 h4{
+    color: #ffc107;
+}
+.fase4{
+    border: 2px solid green;
+    border-radius:10px;
+    font-size: 1.2em;
+    margin: 3%;
+    padding: 2%;
+}
+.fase4 h4{
+    color: green;
+}

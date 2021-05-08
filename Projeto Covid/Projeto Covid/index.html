@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Bruna Prado, Maria, Sarah, Tainá, Angela">
+        <!-- FLAVICON -->
+        <link rel="shortcut icon" href="img/favicon_io (1)/favicon.ico" />
+        <!-- PÁGINA DE ESTILOS -->
+        <link rel="stylesheet" href="css/index.css">
+        <!-- FONTE -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+        <!-- FUNÇÕES JQUERY UI TABS -->
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <title>Home</title>
+    </head>
+
+    <!-- chamando a função para atualizar a data assim que carregar a página -->
+    <body onload="atualizarDataHora()">
+        <header>
+            <nav>
+                <div class="dropMenu" id="menuAncora">
+                    <ul class="menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="quemsomos.html">Sobre Nós</a></li>
+                        <li><a href="cadastro.html">Cadastro Vacinação</a></li>
+                        <li><a href="fases.html">Fases de risco e Atividades econômicas</a></li>
+                    </ul>
+                </div>
+
+                <div class="imgZoom">
+                    <img src="img/sinal-mais.png" alt="Sinal de soma" class="btnZoom" onclick="darZoom()">
+                </div>
+
+                <div class="imgLogo">
+                    <img src="img/Health Tech logotipo.png" alt="Logotipo">
+                </div>
+            </nav>
+
+        </header>
+
+        <main>
+            <section class="imgCovid">
+                <img src="img/vacina-covid-azul.jpg" alt="vacina covid" id="covidVac">
+            </section>
+
+            <section class="protocolo">
+                <div class="titulo">
+                    <h2>Protocolos de Prevenção</h2>
+                    <p>Informação é saúde!</p>
+                </div>
+
+                <div class="boxProtocolo">
+                    <div class="box1">
+                        <div id="imgMao">
+                            <img src="img/lavagem-a-mao.png" alt="Lavando as mãos">
+                        </div>
+                        <div>
+                            <p>Lave as mãos com água e sabão ou higienizador à base de álcool para matar vírus que podem estar nas suas mãos.</p>
+                        </div>
+                    </div>
+    
+                    <div class="box2">
+                        <div id="imgMascara">
+                            <img src="img/mascara.png" alt="Use máscara">
+                        </div>
+                        <div>
+                            <p>Use máscara e tenha cuidado com as boas práticas de uso, remoção e descarte.</p>
+                        </div>
+                    </div>
+    
+                    <div class="box3">
+                        <div id="imgCasa">
+                            <img src="img/stayhome.png" alt="Fique em Casa">
+                        </div>
+                        <div>
+                            <p>Fique em casa e evite aglomerações.</p>
+                        </div>
+                    </div>
+    
+                    <div class="box4">
+                        <div id="imgDistancia">
+                            <img src="img/mantenha-distancia.png" alt="Mantenha distância">
+                        </div>
+                        <div>
+                            <p>Se precisar sair de casa, lembre-se sempre de manter uma distância segura das pessoas ao redor.</p>
+                        </div>
+                    </div>
+    
+                    <div class="box5">
+                        <div id="imgBoca">
+                            <img src="img/mao-na-boca.png" alt="Evite colocar a mão na boca">
+                        </div>
+                        <div>
+                            <p>Evite tocar nos olhos, nariz e boca. As mãos tocam muitas superfícies e podem ser infectadas por vírus.</p>
+                        </div>
+                    </div>
+    
+                    <div class="box6">
+                        <div id="imgFebre">
+                            <img src="img/febre.png" alt="Febre">
+                        </div>
+                        <div>
+                            <p>Se sentir sintomas como febre, dor de garganta, tosse ou falta de ar procure um médico imediatamente.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="infoVac">
+                <div class="imgVacina">
+                    <img src="img/doutora.png" alt="Vacina" id="imgDoutora">
+                </div>
+
+                <div class="infoConteudo">
+                    <div>
+                        <h1>Saiba quais vacinas tem uso emergencial aprovado</h1>
+                    </div>
+
+                    <div>
+                        <p>
+                            Atualmente no Brasil temos apenas duas vacinas aprovadas pela Agência Nacional de Vigilância Sanitária (Anvisa). A Coronavac, vacina desenvolvida pela China com parceira do Instituto Butantan (SP). E também a vacina de Oxford, que foi desenvolvida no Reino Unido em parceria com a Fiocruz, Unifesp e Ministério da Saúde.
+                        
+                            Sabe-se até o momento que a Coronavac tem uma eficácia média global de 50,38%, e 78% para casos leves e de 100% em casos graves e moderados. Já a vacina de Oxford apresenta uma eficácia média de 70,4%, sendo que no regime de dosagem com duas completas atingiu 62,1% de eficácia.</p>
+                    </div>
+                    
+                </div>
+                
+            </section>
+
+            <section class="campVac">
+                <div>
+                    <h2>Campanha de Vacinação</h2>
+                </div>
+                <div class="divSlider">
+                    <img src="img/idoso1.jpg" alt="Idoso tomando vacina" class="slideFotos" id="foto1">
+                </div>
+                <div class="botoesImgCampanha">
+                    <button id="btn1"><img src="img/bola.png" alt="icone circular"></button>
+                    <button id="btn2"><img src="img/bola.png" alt="icone circular"></button>
+                    <button id="btn3"><img src="img/bola.png" alt="icone circular"></button>
+                    <button id="btn4"><img src="img/bola.png" alt="icone circular"></button>
+                    <button id="btn5"><img src="img/bola.png" alt="icone circular"></button>
+                </div>
+                
+            </section>
+
+            <section class="duvidas">
+                <div>
+                    <img src="img/doutora2.png" alt="Imagem doutora fazendo anotações">
+                </div>
+
+                <div class="divTabs">
+                    <div>
+                        <h2>Dúvidas Frequentes</h2>
+                    </div>
+
+                    <div id="tabs">
+                        <ul>
+                          <li><a href="#tabs-1">O que é o Coronavírus?</a></li>
+                          <li><a href="#tabs-2">Quais são os sintomas?</a></li>
+                          <li><a href="#tabs-3">Qual remédio a pessoa deve tomar?</a></li>
+                          <li><a href="#tabs-4">Qual tratamento é indicado?</a></li>
+                          <li><a href="#tabs-5">Quanto tempo dura a recuperação?</a></li>
+                        </ul>
+                        <div id="tabs-1">
+                          <p>Os coronavírus são uma grande família viral, conhecidos desde meados de 1960, que causam infecções respiratórias em seres humanos e em animais. Geralmente, infecções por coronavírus causam doenças respiratórias leves a moderadas, semelhantes a um resfriado comum. Porém, alguns coronavírus podem causar doenças graves com impacto em termos de saúde pública, como já verificado com a Síndrome Respiratória Aguda Grave (SARS), identificada em 2002, e a Síndrome Respiratória do Oriente Médio (MERS), identificada em 2012.</p>
+                        </div>
+                        <div id="tabs-2">
+                          <p>Os sinais e sintomas clínicos são principalmente respiratórios, semelhantes aos de um resfriado comum. Podem também causar infecção do trato respiratório inferior, como as pneumonias. Os principais sintomas são: febre, tosse, coriza e dificuldade para respirar.</p>
+                        </div>
+                        <div id="tabs-3">
+                          <p>Não existe remédio específico. O tratamento é baseado no quadro clínico da pessoa. É indicado repouso e consumo de bastante água, além de algumas medidas adotadas para aliviar os sintomas, conforme cada caso, como, por exemplo, uso de medicamento para dor e febre (antitérmicos e analgésicos), uso de umidificador no quarto ou tomar banho quente para auxiliar no alívio da dor de garganta e tosse.</p>
+                        </div>
+                        <div id="tabs-4">
+                            <p>Não existe tratamento específico e a orientação médica é baseada no quadro clínico da pessoa. É indicado repouso e consumo de bastante água, além de algumas medidas adotadas para aliviar os sintomas, conforme cada caso, como, por exemplo, uso de medicamento para dor e febre (antitérmicos e analgésicos), uso de umidificador no quarto ou tomar banho quente para auxiliar no alívio da dor de garganta e tosse. Assim que os primeiros sintomas surgirem, é fundamental procurar ajuda médica imediata para que profissionais indiquem o que é apropriado para cada caso. Quadros mais graves podem requerer internação hospitalar.</p>
+                          </div>
+                          <div id="tabs-5">
+                            <p>No momento, para os casos mais leves com recomendação de isolamento domiciliar, considera-se o período de 14 dias para monitoramento dos sintomas. Depois disso, se os sintomas respiratórios e febre acabarem, a pessoa pode voltar à rotina normal.</p>
+                          </div>
+                      </div>
+                </div>
+                
+            </section>
+
+            <div class="btnAncora">
+                <a href="#menuAncora"><img src="img/up-arrow.png" alt="Imagem seta para cima"></a>
+            </div>
+        </main>
+
+        <footer>
+            <div class="divImgRelogio">
+                <img src="img/clock.png" alt="Icone relógio">
+                <p id="datahora"></p>
+            </div>
+            
+            <div class="imgRedes">
+                <a href="https://api.whatsapp.com/send/?phone=5511952202923&text&app_absent=0" target="_blank"><img src="img/whatsapp.png" alt="Icone Whatsapp"></a>
+
+                <a href="https://twitter.com/governosp/" target="_blank"><img src="img/twitter.png" alt="Icone Twitter"></a>
+                
+                <a href="https://www.facebook.com/governosp/" target="_blank"><img src="img/facebook.png" alt="Icone Facebook"></a>
+
+                <a href="https://www.instagram.com/governosp/" target="_blank"><img src="img/instagram.png" alt="Icone Instagram"></a>
+                
+                <a href="https://www.youtube.com/user/governosp" target="_blank"><img src="img/youtube.png" alt="Icone Youtube"></a>
+            </div>
+
+        </footer>
+
+        <script src="js/index.js"></script>
+    </body>
+</html>

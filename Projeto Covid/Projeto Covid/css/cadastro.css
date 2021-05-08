@@ -1,0 +1,93 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* ajustando a div inicial onde contém as frases do cadastro */
+#pFrase {
+    text-align: center;
+}
+
+#sec_cadastro {
+    padding: 2% 0;
+}
+
+/* borda do formulário */
+#content {
+    border: 1px solid black;
+    border-radius: 10%;
+    /* border-top-left-radius: 10%;
+    border-top-right-radius: 10%; */
+    margin: 0 15% 5% 15%;
+}
+
+/* tamanho do input name */
+.campos #nome {
+    margin-top: 3%;
+    padding-right: 100px;
+}
+
+/* alinhando os campos para centralizar */
+.campos, .campoCPF, #sec_sexo, #sec_gestante, .campoProfissao, .campoIMC {
+    text-align: center;
+}
+
+/* definindo tamanhos dos inputs, select e label */
+input, select {
+    padding: 10px;
+    margin: 10px;
+}
+
+label {
+    font-size: 1.3em;
+    font-weight: bolder;
+    padding: 10px;
+}
+
+/* definindo tamanho do campo de Vacinas já tomadas e Comorbidades */
+.campoVacinas, .campoComorbidade {
+    margin: 0 20%;
+    text-align: center;
+}
+
+/* zerando o padding do label dos campos vacina e comorbidade */
+.campoVacinas label, .campoComorbidade label {
+    padding: 0;
+}
+
+/* centralizando o botão */
+#divBotao {
+    text-align: center;
+}
+
+/* definindo ajustes para o botão */
+#divBotao button {
+    background-color: #90E0EF;
+    border-radius: 10%;
+    padding: 20px;
+    margin-top: 2%;
+    font-weight: bolder;
+}
+
+#divBotao button:hover {
+    background-color: #00B4D8;
+}
+
+/* ajustando a legenda dos campos vacinas e comorbidades */
+legend {
+    font-size: 1.3em;
+    font-weight: bolder;
+}
+
+/* ajustando a checkbox de vacinas e comorbidades */
+fieldset label {
+    font-weight: normal;
+    padding: 5%;
+}
+
+fieldset {
+    margin: 2% 0;
+}
+
+#progressbar {
+    margin: 5% 5%;
+}

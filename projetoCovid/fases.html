@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- FLAVICON -->
+        <link rel="shortcut icon" href="img/favicon_io (1)/favicon.ico" />
+        <!-- FONTE -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+        <!-- PÁGINA DE ESTILOS -->
+        <link rel="stylesheet" href="./css/fases.css">
+        <link rel="stylesheet" href="./css/index.css">
+        <!-- JQUERY -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- JQUERY - UI -->
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <title>Fases de risco e Atividades econômicas</title>
+    </head>
+<!-- Função que atualiza a data e a hora assim que a página estiver carregada -->
+    <body onload="atualizarDataHora()"> 
+        <header>
+            <nav>
+                <div class="dropMenu" id="menuAncora">
+                    <ul class="menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="quemsomos.html">Sobre Nós</a></li>
+                        <li><a href="cadastro.html">Cadastro Vacinação</a></li>
+                        <li><a href="fases.html">Fases de risco e Atividades econômicas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="imgZoom">
+                    <img src="img/sinal-mais.png" alt="Sinal de soma" class="btnZoom" onclick="darZoom()">
+                </div>
+
+                <div class="imgLogo">
+                    <img src="img/Health Tech logotipo.png" alt="Logotipo">
+                </div>
+            </nav>
+        </header>
+
+        <section class="imgCovid">
+            <img src="img/vacina-covid-azul.jpg" alt="vacina covid" id="covidVac">
+            <h2 id="titulo">Fases de risco de contaminação</h2>
+        </section>
+
+        <main>
+                <div id="text">
+                    <span> Os critérios utilizados para se determinar cada fase são relativos à capacidade hospitalar e ao avanço da pandemia em cada região. Os indicadores atualmente usados são:        
+                        <ul>
+                            <li>taxa de ocupação dos leitos de UTI dedicados a pacientes com Covid</li>
+                            <li>quantidade de leitos Covid a cada 100 mil habitantes</li>
+                            <li>novos casos de Covid-19 a cada 100 mil habitantes</li>
+                            <li>novas mortes por Covid-19 a cada 100 mil habitantes</li>
+                            <li>novas internações por Covid-19 a cada 100 mil habitantes.</li>
+                        </ul>       
+                    Para se ter uma idéia do reflexo da taxa de ocupação dos leitos de Uti e do número de novas internações na rede hospitalar nos últimos 7 dias, disponibilizamos os quadros ao lado.
+                    </span>
+                </div>
+
+                <div class="ocupacao" id="uti">
+                    <div id="faseUti">
+                        <h5>Fase</h5>
+                    </div>
+                    <h3>Taxa de ocupação de leitos nas UTIs - Covid</h3>
+                    <div class="item">
+                        <input type="radio" name="uti" id="" value="fase1" onclick="selecionaUti(this)">
+                        <label for="vermelha">Acima de 80%</label>
+                    </div>
+                    <div class="item">
+                        <input type="radio" name="uti" id="" value="fase2" onclick="selecionaUti(this)">
+                        <label for="vermelha">Entre 70% e 80%</label>
+                    </div>
+                    <div class="item">
+                        <input type="radio" name="uti" id="" value="fase3" onclick="selecionaUti(this)">
+                        <label for="vermelha">Entre 60% e 70%</label>
+                    </div>
+                    <div class="item">
+                        <input type="radio" name="uti" id="" value="fase4" onclick="selecionaUti(this)">
+                        <label for="vermelha">Abaixo de 60%</label>
+                    </div>
+                </div>
+                <div class="ocupacao" id="enfermaria">
+                    <div id="faseEnfermaria">
+                        <h5>Fase</h5>
+                    </div>
+                    <h3>Novas internações em enfermaria </h3>
+                    <div class="item">
+                        <input type="radio" name="enfermaria" id="" value="fase1" onclick="selecionaEnfermaria(this)">
+                        <label for="vermelha">Acima de 1,5</label>
+                    </div>
+                    <div class="item">
+                        <input type="radio" name="enfermaria" id="" value="fase2" onclick="selecionaEnfermaria(this)">
+                        <label for="vermelha">Entre 1,0 e 1,5</label>
+                    </div>
+                    <div class="item">
+                        <input type="radio" name="enfermaria" id="" value="fase3" onclick="selecionaEnfermaria(this)">
+                        <label for="vermelha">Entre 0,5 e 1,0</label>
+                    </div>
+                    <div class="item">
+                        <input type="radio" name="enfermaria" id="" value="fase4" onclick="selecionaEnfermaria(this)">
+                        <label for="vermelha">Abaixo de 0,5</label>
+                    </div>
+                </div>     
+        </main>
+        <section id="atual">
+            <span>
+                No momento, nos encontramos numa fase de transição entre a Fase 1 - Vermelha e a Fase 2 - Laranja. Esta fase de transição permite a abertura dos mesmos setores da economia que são autorizados a funcionar nas fases laranja e amarela, estas dependem de índices de Covid-19 melhores para serem implementadas. Estes setores deverão seguir regulamentação específica para seu funcionamento. Para maiores informações acesse o <a href="https://www.gov.br/saude/pt-br">Ministério da Saúde.</a> 
+            </span>
+        </section>
+            
+            <div id="tituloFases">
+                <h2>Atividades permitidas em cada fase, com atendimento presencial.</h2> 
+            </div>
+              
+            
+        <section id="atividades">
+        <!-- Accordion - JQuery UI -->
+            <div id="accordion">
+                <h3>Shopping Center, Galerias e estabelecimentos congêneres</h3>
+                <div class="fases">
+                <div class="fase1">
+                    <h4>Fase 1</h4>
+                    <span>Atividade não permitida.</span>
+                </div>
+                <div class="fase2">
+                    <h4>Fase2</h4>
+                    <span>Capacidade 40% limitada
+                        Horário reduzido (8 horas): Após as 6h e antes das 20h
+                        Praças de alimentação: funcionamento de acordo com a categoria do estabelecimento
+                        Adoção dos protocolos geral e setorial específicos</span>
+                </div>
+                <div class="fase3">
+                    <h4>Fase 3</h4>
+                    <span>Capacidade 40% limitada.
+                        Horário reduzido (12 horas): Após as 6h e antes das 22h
+                        Praças de alimentação: funcionamento de acordo com a categoria do estabelecimento
+                        Adoção dos protocolos geral e setorial específico.</span>
+                </div>
+                <div class="fase4">
+                    <h4>Fase4</h4>
+                    <span>Capacidade 60% limitada
+                        Horário reduzido (12 horas).
+                        Adoção dos protocolos geral e setorial específico.</span>
+                </div>
+                </div>
+                <h3>Comércio</h3>
+                <div class="fases">
+                <div class="fase1">
+                    <h4>Fase 1</h4>
+                    <span>Atividade não permitida.</span>
+                </div>
+                <div class="fase2">
+                    <h4>Fase 2</h4>
+                    <span>Capacidade 40% limitada
+                        Horário reduzido (8 horas): Após as 6h e antes das 20h
+                        Adoção dos protocolos geral e setorial específicos</span>
+                </div>
+                <div class="fase3">
+                    <h4>Fase 3</h4>
+                    <span>Capacidade 40% limitada
+                        Horário reduzido (12 horas): Após as 6h e antes das 22h
+                        Adoção dos protocolos geral e setorial específicos</span>
+                </div>
+                <div class="fase4">
+                        <h4>Fase 4</h4>
+                        <span>Capacidade 60% limitada
+                            Horário reduzido (12 horas)
+                            Adoção dos protocolos geral e setorial específicos</span>
+                </div>
+                </div>
+                <h3>Comércio varejista de mercadorias: lojas de comveniência</h3>
+                <div>
+                    <div class="fase1">
+                        <h4>Fase 1</h4>
+                        <span>Venda de bebidas alcóolicas: Após as 6h e até as 20h</span>
+                    </div>
+                    <div class="fase2">
+                        <h4>Fase 2</h4>
+                        <span>Venda de bebidas alcóolicas: Após as 6h e até as 20h</span>
+                    </div>
+                    <div class="fase3">
+                        <h4>Fase 3</h4>
+                        <span>Sem restrições</span>
+                    </div>
+                    <div class="fase4">
+                        <h4>Fase 4</h4>
+                        <span>Sem restrições</span>
+                    </div>
+                </div>
+                <h3>Serviços</h3>
+                <div>
+                    <div class="fase1">
+                        <h4>Fase 1</h4>
+                        <span>Atividade não permitida.</span>
+                    </div>
+                    <div class="fase2">
+                        <h4>Fase 2</h4>
+                        <span>Capacidade 40% limitada
+                            Horário reduzido (8 horas): Após as 6h e antes das 20h
+                            Adoção dos protocolos geral e setorial específicos</span>
+                    </div>
+                    <div class="fase3">
+                        <h4>Fase 3</h4>
+                        <span>Capacidade 40% limitada
+                            Horário reduzido (10 horas): Após as 6h e antes das 20h
+                            Adoção dos protocolos geral e setorial específicos</span>
+                    </div>
+                    <div class="fase4">
+                        <h4>Fase 4</h4>
+                        <span>Capacidade 60% limitada
+                            Horário reduzido (12 horas)
+                            Adoção dos protocolos geral e setorial específicos</span>
+                    </div>
+                </div>
+                <h3>Consumo local(Restaurantes e similares</h3>
+                <div>
+                    <div class="fase1">
+                        <h4>Fase 1</h4>
+                        <span>Atividade não permitida.</span>
+                    </div>
+                    <div class="fase2">
+                        <h4>Fase 2</h4>
+                        <span>Capacidade 40% limitada
+                            Horário reduzido (8 horas): Após as 6h e antes das 20h
+                            Adoção dos protocolos geral e setorial específicos</span>
+                    </div>
+                    <div class="fase3">
+                        <h4>Fase 3</h4>
+                        <span>Capacidade 40% limitada
+                            Horário reduzido (10 horas): Após as 6h e antes das 20h
+                            Adoção dos protocolos geral e setorial específicos</span>
+                    </div>
+                    <div class="fase4">
+                        <h4>Fase 4</h4>
+                        <span>Capacidade 60% limitada
+                            Horário reduzido (12 horas)
+                            Adoção dos protocolos geral e setorial específicos</span>
+                    </div>
+                </div>
+                <h3>Consumo local(Bares)</h3>
+                <div>
+                    <div class="fase1">
+                        <h4>Fase 1</h4>
+                        <span>Atividade não permitida.</span>
+                    </div>
+                    <div class="fase2">
+                        <h4>Fase 2</h4>
+                        <span>Atividade não permitida.</span>
+                    </div>
+                    <div class="fase3">
+                        <h4>Fase 3</h4>
+                        <span>Capacidade 40% limitada
+                            Horário reduzido (10 horas): Após as 6h e antes das 20h
+                            Consumo e atendimento apenas para clientes sentados
+                            Adoção dos protocolos geral e setorial específicos</span>
+                    </div>
+                    <div class="fase4">
+                        <h4>Fase 4</h4>
+                        <span>Capacidade 60% limitada
+                            Horário reduzido (12 horas): Após as 6h e antes das 22h
+                            Consumo e atendimento apenas para clientes sentados
+                            Adoção dos protocolos geral e setorial específicos</span>
+                    </div>
+                </div>
+                <h3>Salões de beleza e barbearias</h3>
+                <div>
+                    <div class="fase1">
+                        <h4>Fase 1</h4>
+                        <span>Atividade não permitida.</span>
+                    </div>
+                    <div class="fase2">
+                        <h4>Fase 2</h4>
+                        <span>Capacidade 40% limitada
+                            Horário reduzido (8 horas): Após as 6h e antes das 20h
+                            Adoção dos protocolos geral e setorial específicos</span>
+                    </div>
+                    <div class="fase3">
+                        <h4>Fase 3</h4>
+                        <span>Ocupação máxima limitada a 4   40% da capacidade do local.
+                            Horário reduzido (10 horas): Após as 6h e antes das 22h
+                            Adoção dos protocolos geral e setorial específico.</span>
+                        </div>
+                        <div class="fase4">
+                            <h4>Fase 4</h4>
+                            <span>Capacidade 60% limitada
+                                Horário reduzido (12 horas)
+                                Adoção dos protocolos geral e setorial específicos</span>
+                            </div>
+                </div>
+                <h3>Academias de esportes de todas as modalidades e centros de gisnástica</h3>
+                <div>
+                    <div class="fase1">
+                        <h4>Fase 1</h4>
+                        <span>Atividade não permitida.</span>
+                    </div>
+                    <div class="fase2">
+                        <h4>Fase 2</h4>
+                        <span>Capacidade 40% limitada
+                            Horário reduzido (8 horas): Após as 6h e antes das 20h
+                            Agendamento prévio e hora marcada
+                            Permissão apenas de aulas e práticas individuais, suspensas as aulas e práticas em grupo
+                            Adoção dos protocolos geral e setorial específicos</span>
+                    </div>
+                    <div class="fase3">
+                        <h4>Fase 3</h4>
+                        <span>Capacidade 40% limitada
+                            Horário reduzido (10 horas): Após as 6h e antes das 22h
+                            Agendamento prévio e hora marcada
+                            Permissão apenas de aulas e práticas individuais, suspensas as aulas e práticas em grupo
+                            Adoção dos protocolos geral e setorial específicos</span>
+                    </div>
+                    <div class="fase4">
+                        <h4>Fase 4</h4>
+                        <span>Capacidade 60% limitada
+                            Horário reduzido (12 horas)
+                            Adoção dos protocolos geral e setorial específicos
+                            </span>
+                    </div>
+                </div>
+                <h3>Eventos, convenções e atividades culturais</h3>
+                <div>
+                    <div class="fase1">
+                        <h4>Fase 1</h4>
+                        <span>Atividade não permitida.</span>
+                    </div>
+                    <div class="fase2">
+                        <h4>Fase 2</h4>
+                        <span>Capacidade 40% limitada
+                            Horário reduzido (8 horas): Após as 6h e antes das 20h
+                            Obrigação de controle de acesso, hora marcada e assentos marcados
+                            Assentos e filas respeitando distanciamento mínimo
+                            Proibição de atividades com público em pé
+                            Adoção dos protocolos geral e setorial específico</span>
+                    </div>
+                    <div class="fase3">
+                        <h4>Fase 3</h4>
+                        <span>Capacidade 40% limitada
+                            Horário reduzido (10 horas): Após as 6h e antes das 22h
+                            Obrigação de controle de acesso, hora marcada e assentos marcados
+                            Assentos e filas respeitando distanciamento mínimo
+                            Proibição de atividades com público em pé
+                            Adoção dos protocolos geral e setorial específico</span>
+                    </div>
+                    <div class="fase4">
+                        <h4>Fase 4</h4>
+                        <span>Classificação na fase no período anterior de, pelo menos, 28 dias consecutivos
+                            Capacidade 60% limitada
+                            Horário reduzido (12 horas)
+                            Obrigação de controle de acesso e hora marcada
+                            Filas e espaços com demarcações, respeitando distanciamento mínimo
+                            Adoção dos protocolos geral e setorial específicos</span>
+                    </div>
+                </div>
+                <h3>Demais atividades que geram aglomeração</h3>
+                <div>
+                    <div class="fase1">
+                        <h4>Fase 1</h4>
+                        <span>Atividade não permitida.</span>
+                    </div>
+                    <div class="fase2">
+                        <h4>Fase 2</h4>
+                        <span>Não permitido.</span>
+                    </div>
+                    <div class="fase3">
+                        <h4>Fase 3</h4>
+                        <span>Não permitido.</span>
+                    </div>
+                    <div class="fase4">
+                        <h4>Fase 4</h4>
+                        <span>Não permitido.</span>
+                    </div>
+                </div>
+                <h3>Atividades religiosas coletivas</h3>
+                <div>
+                    <div class="fase1">
+                        <h4>Fase 1</h4>
+                        <span>Atividade não permitida.</span>
+                    </div>
+                    <div class="fase2">
+                        <h4>Fase 2</h4>
+                        <span>Atividade permitida com adoção dos protocolos geral e setorial específicos.</span>
+                    </div>
+                    <div class="fase3">
+                        <h4>Fase 3</h4>
+                        <span>Atividade permitida com adoção dos protocolos geral e setorial específicos.</span>
+                    </div>
+                    <div class="fase4">
+                        <h4>Fase 4</h4>
+                        <span>Atividade permitida com adoção dos protocolos geral e setorial específicos.</span>
+                    </div>
+                </div>
+    
+            </div> 
+        <!-- Fim do Accordion -->
+            <div id="caixa">
+                <img src="./img/caixa.svg" alt="mulher no caixa"> 
+            </div>
+        </section>
+        
+        <div class="btnAncora">
+            <a href="#menuAncora"><img src="img/up-arrow.png" alt="Imagem seta para cima"></a>
+        </div>
+        <footer>
+            <div class="divImgRelogio">
+                <img src="img/clock.png" alt="Icone relógio">
+                <p id="datahora"></p>
+            </div>
+            
+            <div class="imgRedes">
+                <a href="https://api.whatsapp.com/send/?phone=5511952202923&text&app_absent=0" target="_blank"><img src="img/whatsapp.png" alt="Icone Whatsapp"></a>
+
+                <a href="https://twitter.com/governosp/" target="_blank"><img src="img/twitter.png" alt="Icone Twitter"></a>
+                
+                <a href="https://www.facebook.com/governosp/" target="_blank"><img src="img/facebook.png" alt="Icone Facebook"></a>
+
+                <a href="https://www.instagram.com/governosp/"><img src="img/instagram.png" alt="Icone Instagram"></a>
+                
+                <a href="https://www.youtube.com/user/governosp" target="_blank"><img src="img/youtube.png" alt="Icone Youtube"></a>
+            </div>
+        </footer>
+        <script src="./js/fases.js"></script>
+        <script src="./js/index.js"></script>
+    </body>
+</html>

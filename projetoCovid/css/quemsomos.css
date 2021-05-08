@@ -1,0 +1,328 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    /* font-size: 14px; */
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* DEFINIÇÕES DE TAMANHO QUADRADO TIME */
+
+#nossoTime{
+    width: 90%;
+    margin: 0 auto;
+}
+
+#nossoTime .fotoEquipe{
+    width: 21rem;
+    height: 22.5rem;    
+}
+
+.fotoEquipe {
+    border-radius: 10%;
+}
+
+/* LEGENDA DAS FOTOS */
+
+.legendaPuxar1, .legendaPuxar2{
+    width: 18rem;
+    height: 22.5rem;
+    background-color: #90e1efd3;
+}
+
+.legendaPuxar1{
+    position: absolute;
+    top: 50rem;
+}
+
+.legendaPuxar2{
+    position: absolute;
+    top: 81.8rem;
+}
+
+.legendaPuxar1 p, .legendaPuxar2 p{
+    font-family: 'Source Sans Pro', sans-serif;
+    text-indent: 1rem;
+    text-align: justify;
+    padding: 0.5rem;
+    margin-top: 1.5rem;
+    font-size: 1.2em;
+    line-height: 1.7rem;
+    text-shadow: 0.01rem 0.01rem 0.02rem black;
+}
+
+/* TÍTULO EQUIPE */
+
+#tituloNossaEquipe{
+    width: 20rem;
+    height: 24rem;
+    margin: 0 1rem;
+}
+
+/* INTEGRANTES DE CIMA */
+
+#conjunto1{
+    width: 71.7rem;
+    margin: 5rem auto 0 auto;
+}
+
+#conjunto1 div{
+    padding: 0 1.5rem;
+}
+
+#conjunto1 h2{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 3.2em;
+    font-weight: bold;
+    word-spacing: 0.5rem;
+    line-height: 3.5rem;
+    text-align: center;
+    text-transform: uppercase;   
+    margin-top: 10rem;
+    color: #00B4D8;
+    text-shadow: 0.2rem 0.2rem 0.1rem black;
+}
+
+
+#covidquemsomos{
+    width: 20rem;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    bottom: 13rem;
+    opacity: 0.2;
+    
+}
+
+/* INTEGRANTES DE BAIXO */
+
+#conjunto2 div{
+    padding: 0 1.5rem;
+    
+    
+}
+
+#conjunto2{
+    padding: 2.5rem 0;
+    width: 71.7rem;
+    margin: 2.5rem auto 4rem auto;
+}
+
+#nossoTime #conjunto1{
+    display: flex;
+}
+
+#nossoTime #conjunto2{
+    display: flex;
+}
+
+/* LEGENDA DAS INTEGRANTES */
+
+.sobreTime{
+    height: 4rem;
+    position: relative;
+    right: 1.6rem;
+    top: 1rem;
+    
+    
+}
+
+.sobreTime p:nth-child(1){
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.sobreTime p:nth-child(2){
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.5em;
+    color: rgb(44, 44, 44);
+    padding-top: 0.2rem;
+
+}
+
+/* DIVS DA PARTE DE PATROCINIO */
+
+#empresasPatrocinadoras{
+    width: 69rem;
+    height: 37rem;
+    margin: 2rem auto;
+}
+
+#divPatrocinio1{
+    width: 100%;
+    height: 10rem;
+    background-image: url("../img/fundoquemsomos2.png");
+    background-size: cover;
+}
+
+
+#divPatrocinio1 h2{
+    z-index: 1;
+    position: relative;
+    top: 3rem;
+    left: 3.5rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 3.2em;
+    font-weight: bold;
+    word-spacing: 0.5rem;
+    text-transform: uppercase;   
+    color: #00B4D8;
+    text-shadow: 0.2rem 0.2rem 0.1rem black;
+}
+
+#divPatrocinio2{
+    width: 100%;
+    height: 27rem;
+    display: flex;
+}
+
+#divPatrocinio3{
+    height: 27rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#divPatrocinio4{
+    width: 100%;
+    height: 8rem;
+    display: flex;
+}
+
+#imagemGrandePatrocinadores{
+    display: block;
+    margin: 1.7rem auto 0 auto;
+    width: 35rem;
+    height: 20rem;
+}
+#divPatrocinio5, #divPatrocinio6, #divPatrocinio7, #divPatrocinio8, #divPatrocinio9{
+    width: 7rem;
+    height: 6rem;
+}
+
+#divPatrocinio11{
+    width: 34rem;
+    margin-left: 2.6rem;
+    margin-top: 1rem;
+    overflow-y: auto;
+}
+
+#divPatrocinio11 p{
+    font-family: 'Source Sans Pro', sans-serif;
+    text-indent: 1.5rem;
+    text-align: justify;
+    margin: 2rem 1rem 0 0;
+    font-size: 1.2em;
+    line-height: 1.6rem;
+    text-shadow: 0.01rem 0.01rem 0.02rem black;
+}
+
+/* ICONES DAS EMPRESAS PATROCINADORAS */
+
+.icoempresas{
+    display: block;
+    width: 5.5rem;
+    height: 5.5rem;
+    margin: 1.1rem auto 2rem auto;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+/* MENU */
+.dropMenu {
+    font-size: 1.3em;
+    list-style: none;
+    text-align: center;
+    height: 6rem;  /*acrescentei */
+}
+
+.menu li {
+    display: inline-block;
+    padding: 2% 2%;
+}
+
+.menu a {
+    color: black;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.menu a:hover {
+    color: #0096C7; 
+}
+
+.menu li:hover {
+    transform: scale(1.2);
+}
+
+/* BOTÃO ACESSIBILIDADE */
+.imgZoom {
+    position: fixed;
+    top: 5px;
+    left: 10px; 
+}
+
+.imgZoom img:hover {
+    transform: scale(1.2);
+}
+
+/* LOGOTIPO */
+.imgLogo {
+    position: relative;
+}
+
+.imgLogo img {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    width: 90px;
+}
+
+/* SECTION IMG INICIAL */
+#covidVac {
+    width: 100%;
+}
+
+
+/* BOTAO ANCORA */
+.btnAncora {
+    position: fixed;
+    bottom: 0px;
+    right: 0px; 
+}
+
+/* FOOTER */
+footer {
+    background-color: #0096C7;
+    padding-top: 3%;
+    height: 2.6rem; /*acrescentei */
+}
+
+.imgRedes {
+    margin-right: 6%;
+    float: right;
+}
+
+.imgRedes img:hover {
+    transform: scale(1.2);
+}
+
+.imgRedes img {
+    padding: 0 1px;
+}
+
+.divImgRelogio {
+    position: relative;
+}
+
+.divImgRelogio img {
+    position: absolute;
+    left: 1%;
+}
+
+.divImgRelogio p {
+    position: absolute;
+    left: 5%;
+}
